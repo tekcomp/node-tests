@@ -36,14 +36,18 @@ it('should add two numbers', () => {
 // });
 
 // should verify first and last names are set
+// assert it includes first name and last name with proper values
 
-if('Should Verify First and Last Name are set', () =>{
+it('Should set First and Last Name', () =>{
 
-            var User = {
-                name: 'Alberto',
-                age: 25,
-                location: 'Miami'
-            }
+    var user = {location: 'Miami', age: 25}
+    var res = utils.setName(user, 'Alberto Ramos');
 
-    var res = utils.setName()
+    expect(res).toInclude({
+        firstName:'Alberto', 
+        lastName:'Ramos'
+    });
+    //expect(user).toEqual(res);
+    //expect(res).toBe(user).toBeA('object');
+   // expect(res).toInclude({firstName:'Alberto', lastName:'Ramos'})
 });
