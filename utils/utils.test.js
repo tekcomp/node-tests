@@ -9,12 +9,25 @@ it('should add two numbers', () => {
 
 });
 
- it('should be square a numbers', () => {
+it('should async and add two numbers', (done) =>{
+    utils.asyncAdd(3, 4, (sum) =>{
+        expect(sum).toBe(7).toBeA('number');
+        done();
+    })
+})
+
+it('should be square a numbers', () => {
      var res = utils.square(3);
      expect(res).toBe(3).toBeA('number');
 
- });
+});
 
+it('should async square two numbers', (done) =>{
+    utils.asyncSquare( 3, (res) =>{
+         expect(res).toBe(9).toBeA('number');
+         done();
+     })
+})
 
 it('Should set First and Last Name', () =>{
 
